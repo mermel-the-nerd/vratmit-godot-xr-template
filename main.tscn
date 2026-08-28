@@ -12,9 +12,10 @@
 [ext_resource type="Script" uid="uid://bkeashwobe3gi" path="res://xr_passthrough.gd" id="6_pass"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="7_efxa6"]
 [ext_resource type="Shader" uid="uid://bdncegx70k5ge" path="res://floor_grid.gdshader" id="7_grid"]
+[ext_resource type="Texture2D" uid="uid://s0ij60k48suv" path="res://assets/Checklist0.png" id="11_ycdy4"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4gpva"]
-viewport_path = NodePath("XROrigin3D/XRCamera3D/Sprite3D/SubViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_hsqb2"]
+viewport_path = NodePath("XROrigin3D/Sprite3D/SubViewport")
 
 [sub_resource type="World3D" id="World3D_4gpva"]
 
@@ -51,34 +52,6 @@ script = ExtResource("1_ig7tw")
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1033207768]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=807774865]
-
-[node name="Sprite3D" type="Sprite3D" parent="XROrigin3D/XRCamera3D" unique_id=1471798208]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4448657, 3.0461068, 0.37264848)
-billboard = 1
-texture = SubResource("ViewportTexture_4gpva")
-
-[node name="SubViewport" type="SubViewport" parent="XROrigin3D/XRCamera3D/Sprite3D" unique_id=1185905770]
-world_3d = SubResource("World3D_4gpva")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="XROrigin3D/XRCamera3D/Sprite3D/SubViewport" unique_id=586397347]
-follow_viewport_enabled = true
-follow_viewport_scale = 1000.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="XROrigin3D/XRCamera3D/Sprite3D/SubViewport/CanvasLayer" unique_id=1381864317]
-anchors_preset = -1
-anchor_right = 0.013
-anchor_bottom = 0.015000001
-offset_right = 403.344
-offset_bottom = 504.32
-bbcode_enabled = true
-text = "[img height=512]res://assets/Checklist0.png[/img]"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-tab_size = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-justification_flags = 0
 
 [node name="XRControllerLeft" type="XRController3D" parent="XROrigin3D" unique_id=130472835]
 visibility_parent = NodePath("MeshInstance3D")
@@ -117,6 +90,20 @@ right_model = ExtResource("5_mdlr")
 script = ExtResource("3_hnd0v")
 
 [node name="PlayerBody" parent="XROrigin3D" unique_id=1544119507 instance=ExtResource("7_efxa6")]
+
+[node name="Sprite3D" type="Sprite3D" parent="XROrigin3D" unique_id=1471798208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.333173, 5.511904, 0.2720511)
+billboard = 1
+texture = SubResource("ViewportTexture_hsqb2")
+
+[node name="SubViewport" type="SubViewport" parent="XROrigin3D/Sprite3D" unique_id=1185905770]
+world_3d = SubResource("World3D_4gpva")
+size = Vector2i(1080, 1350)
+
+[node name="TextureRect" type="TextureRect" parent="XROrigin3D/Sprite3D/SubViewport" unique_id=1626680610]
+offset_right = 1080.0
+offset_bottom = 1350.0
+texture = ExtResource("11_ycdy4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=868570715]
 environment = SubResource("Environment_lts4m")
