@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="vratmit-godot-xr-template"
+config/name="vratmit-godot-xr-templatee"
 run/main_scene="uid://dnnvbq1dubml1"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="vratmit-godot-xr-template"
 
 [physics]
 

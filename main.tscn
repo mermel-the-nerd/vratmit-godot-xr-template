@@ -109,6 +109,7 @@ environment = SubResource("Environment_lts4m")
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1222995564]
 
 [node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=1788946882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5830747, 0.44503176, 0.041499138)
 material_override = SubResource("ShaderMaterial_floor")
 mesh = SubResource("PlaneMesh_floor")
 
